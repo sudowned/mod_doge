@@ -17,7 +17,7 @@ methods. Highly performant, thread safe, and unlikely to pee all over your carpe
 Requirements
 ============
 
-mod_doge requires Apache 2.4 and a reasonable filesystem in which slashes slant the
+mod_doge requires libdoge, Apache 2.4, and a reasonable filesystem in which slashes slant the
 right way. This is for perfectly legitimate, non-kludgy reasons. Wow. Also, I don't
 know if it'll work properly in Centos because they put things in the wrong place there.
 
@@ -62,8 +62,50 @@ You can optionally request doges. Or not. Don't argue about it.
 Use your `dogewheel` then.
 
 ##Extending the API
-If you need doge data elsewhere, consider performing a 301 redirect to `/much_doge` using
-`mod_rewrite`, either (again) in your `virtualhost` files or in `htaccess.`
+If you need doge data elsewhere, consider performing a 301 redirect to the API URL
+and method using`mod_rewrite`, either (again) in your `virtualhost` files or in `htaccess.`
+
+Method Reference
+================
+
+`much_doge`
+
+Provides one doge, enclosed in `<pre>` for readability.
+
+##Example request
+
+GET				/much_doge
+Accept			text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding	gzip, deflate
+Accept-Language	en-US,en;q=0.5
+Cache-Control	no-cache
+Connectio		keep-alive
+Host			localhost
+Pragma			no-cache
+User-Agent		Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36
+
+##Response
+
+`░░░░▒░░░░░░▒▒░░░░░░░░░░░░░▒▒░░░░
+▒▒▒▒▒░░░░░▒▓▓▓░░░░░░░░░░▒▓▒▓▓░░░
+░░░░░░░░▒▒▒▒░▒▒▒▒▒▒▒▒▒▒▒▓▒▒▒▓▒░░
+░▒▒▒▓▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒█▓░▓█▒▓░░
+▓▓▓▓▒░░░▒░░▒▒▒▒▒▒▒▒▒▒▒▒░▒▓█▓▒▒░░
+▒▒▒░░░░░░░▒▓▒▒░░▒▒▒▒▒▒▒▒░▒▓▒▓▒░░
+▒▒▒░░░██▓░▒▒▒░░░░░▒▒▒▒▒▒▒░░▒▓▓▒░
+░▒░░░▒▓█▒▒░░▒█▓███▒▒▒▒▒▒▒▒▒░▒█▒░
+░▒░░░░░░░░▒▒▒▓▓█▓▒░░░▒▒▒▒▒▒▒▒▒▓░
+▒▒░░▓█▓█▒░░▒▒░░░░▒░░░▒░░▒▒░▒▒▒▒░
+░░░░█████░░░▒▒░░░░▒░░░▒▒░░░░░░▒░
+░░░▒▓▓▓▓░▒▒░░░▒▒░░▒▒▒▒▒░▒▒▒▒▒▒▒░
+░░░░▓███▓▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+░▒░░░▓█▓██▓█▓▒░▒▒▒▒▒▒▒▒▒░░░▒▒▒▒▒
+░░░▒░░░░░░▒░░▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒
+░░▒▒░▒░▒▒▒▒▒▒▒▒▒░▒▒▒▒▒░▒▒▒▒▒▒▒▒▒
+░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒▒▒▒▒▒▒▒▒▓▒▒
+░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▒▒▒
+░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒▒▒░    `
+
 
 Windows Support
 ===============
